@@ -37,7 +37,7 @@ function App() {
       <div className="board-container">
         <Board board={board} turn={turn} />
       </div>
-      {result && <p className="veritcal-text">{result}</p>}
+      {result && <p className="vertical-text">{result}</p>}
     </div>
   );
 }
