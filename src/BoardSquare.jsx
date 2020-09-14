@@ -4,9 +4,7 @@ import Piece from "./Piece";
 function BoardSquare({ piece }) {
   return (
     <div>
-      <Square>
-        <Piece piece={piece} />
-      </Square>
+      <Square>{piece && <Piece piece={piece} />}</Square>
     </div>
   );
 }

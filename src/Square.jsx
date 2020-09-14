@@ -1,7 +1,7 @@
 import React from "react";
 
-function Square() {
-  return <div></div>;
+function Square({ children }) {
+  return <div>{children}</div>;
 }
 
 export default Square;

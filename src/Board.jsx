@@ -1,5 +1,5 @@
 import React from "react";
-
+import BoardSquare from "./BoardSquare";
 function Board({ board }) {
   //console.log(board);
   //Array of array each array has length 8
@@ -11,7 +11,7 @@ function Board({ board }) {
         return (
           <div key={i} className="square">
             {/* {type,color} */}
-            <p>{JSON.stringify(piece)}</p>
+            <BoardSquare piece={piece} />
           </div>
         );
       })}

@@ -1,7 +1,7 @@
 import React from "react";
 
-function Piece() {
-  return <div></div>;
+function Piece({ piece }) {
+  return <div>{piece.type}</div>;
 }
 
 export default Piece;
