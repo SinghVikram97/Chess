@@ -3,7 +3,7 @@ import Square from "./Square";
 import Piece from "./Piece";
 function BoardSquare({ piece, black }) {
   return (
-    <div>
+    <div className="board-square">
       <Square black={black}>{piece && <Piece piece={piece} />}</Square>
     </div>
   );

@@ -36,3 +36,8 @@
 .square-white {
   background: #f0d9b5;
 }
+
+.board-square {
+  height: 100%;
+  width: 100%;
+}
