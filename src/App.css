@@ -28,3 +28,11 @@
   width: 12.5%;
   height: 12.5%;
 }
+
+.square-black {
+  background: #b59963;
+}
+
+.square-white {
+  background: #f0d9b5;
+}

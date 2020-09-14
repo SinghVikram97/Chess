@@ -1,10 +1,10 @@
 import React from "react";
 import Square from "./Square";
 import Piece from "./Piece";
-function BoardSquare({ piece }) {
+function BoardSquare({ piece, black }) {
   return (
     <div>
-      <Square>{piece && <Piece piece={piece} />}</Square>
+      <Square black={black}>{piece && <Piece piece={piece} />}</Square>
     </div>
   );
 }
