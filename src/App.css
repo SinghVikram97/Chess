@@ -55,3 +55,20 @@
   max-width: 70%;
   max-height: 70%;
 }
+
+.vertical-text {
+  text-orientation: upright;
+  writing-mode: vertical-lr;
+  font-family: sans-serif;
+  padding: 10px;
+  color: white;
+}
+
+.vertical-text button {
+  margin-top: 20px;
+  padding: 10px;
+  cursor: pointer;
+  background-color: rgb(63, 63, 63);
+  border: 2px solid white;
+  border-radius: 10px;
+}
