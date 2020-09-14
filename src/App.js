@@ -17,8 +17,10 @@ function App() {
   // Run useEffect only once
 
   return (
-    <div className="App">
-      <Board board={board} />
+    <div className="container">
+      <div className="board-container">
+        <Board board={board} />
+      </div>
     </div>
   );
 }
