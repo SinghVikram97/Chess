@@ -1,13 +1,20 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import BoardSquare from "./BoardSquare";
-function Board({ board }) {
+function Board({ board, turn }) {
+  const [currBoard, setCurrBoard] = useState([]);
+
+  useEffect(() => {
+    setCurrBoard(turn === "w" ? board.flat() : board.flat().reverse());
+  }, [board, turn]);
+
   //console.log(board);
   //Array of array each array has length 8
   // first 2 are filed and last 2 are filed with pieces rest null
   // console.log(board.flat()); // convert to 1d array of size 64
   function getXYPosition(i) {
-    const x = i % 8;
-    const y = Math.abs(Math.floor(i / 8) - 7); // array starts at 0
+    const x = turn === "w" ? i % 8 : Math.abs((i % 8) - 7);
+    const y =
+      turn === "w" ? Math.abs(Math.floor(i / 8) - 7) : Math.floor(i / 8);
     return { x, y };
   }
   function isBlack(i) {
@@ -22,7 +29,7 @@ function Board({ board }) {
   }
   return (
     <div className="board">
-      {board.flat().map((piece, i) => {
+      {currBoard.map((piece, i) => {
         return (
           <div key={i} className="square">
             {/* {type,color} */}

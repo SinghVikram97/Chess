@@ -6,11 +6,11 @@ import { BehaviorSubject } from "rxjs";
 const chess = new Chess();
 
 // Give intial value to observable
-export const gameSubject = new BehaviorSubject({
-  board: chess.board(), // has a property board
-});
+export const gameSubject = new BehaviorSubject({});
 
-export function initGame() {}
+export function initGame() {
+  updateGame();
+}
 
 export function resetGame() {
   chess.reset();
@@ -20,7 +20,7 @@ export function resetGame() {
 export function move(from, to) {
   const legalMove = chess.move({ from, to });
   if (legalMove) {
-    gameSubject.next({ board: chess.board() });
+    updateGame();
   }
 }
 
@@ -29,6 +29,7 @@ function updateGame() {
   const newGame = {
     board: chess.board(),
     isGameOver,
+    turn: chess.turn(),
     result: isGameOver ? getGameResult() : null,
   };
   gameSubject.next(newGame);
