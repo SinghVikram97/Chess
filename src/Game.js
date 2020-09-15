@@ -31,6 +31,7 @@ function updateGame() {
     isGameOver,
     turn: chess.turn(),
     result: isGameOver ? getGameResult() : null,
+    inCheck: chess.in_check(),
   };
   gameSubject.next(newGame);
 }

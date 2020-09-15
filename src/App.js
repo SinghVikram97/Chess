@@ -7,6 +7,7 @@ function App() {
   const [isGameOver, setIsGameOver] = useState();
   const [result, setResult] = useState();
   const [turn, setTurn] = useState();
+  const [inCheck, setInCheck] = useState();
   useEffect(() => {
     // Subscribe to observable
     // Will fire callback everytime game changes
@@ -17,6 +18,7 @@ function App() {
       setIsGameOver(game.isGameOver);
       setResult(game.result);
       setTurn(game.turn);
+      setInCheck(game.inCheck);
     });
 
     // Unsubscribe
@@ -38,6 +40,7 @@ function App() {
         <Board board={board} turn={turn} />
       </div>
       {result && <p className="vertical-text">{result}</p>}
+      {!result && inCheck && <p className="vertical-text">In Check</p>}
     </div>
   );
 }
