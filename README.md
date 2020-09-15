@@ -15,4 +15,4 @@
 
 ### Demo
 
-![]("./src/assets/Demo.gif")
+![](Demo.gif)
